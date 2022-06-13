@@ -5,6 +5,7 @@ import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 public class Driver {
@@ -31,9 +32,8 @@ public class Driver {
             capabilities.setCapability("app", "C:\\Users\\menna\\Desktop\\task\\src\\application.apk");
             try {
                 appiumDriver = new AppiumDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
-//                appiumDriver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+                appiumDriver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
                 log.info("Create instance of Android Driver");
-
 
             } catch (MalformedURLException e) {
                 e.printStackTrace();
