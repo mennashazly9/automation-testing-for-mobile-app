@@ -50,15 +50,4 @@ public class Driver {
         return threadLocal.get();
     }
 
-    public void removeDriver() {
-        appiumDriver = threadLocal.get();
-        try {
-            appiumDriver.quit();
-        } finally {
-            threadLocal.remove();
-        }
-        appiumDriver.close();
-    }
-
-
 }

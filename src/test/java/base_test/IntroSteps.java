@@ -19,4 +19,24 @@ public class IntroSteps extends BaseTest {
     public void screenWillDisplayمرحلتكالدراسيه() {
         Assert.assertTrue(secondScreen.getTitle().isDisplayed());
     }
+
+    @When("click on fifth grade")
+    public void clickOnFifthGrade() {
+        secondScreen.clickOnFifthGradeButton();
+    }
+
+    @When("click on math category")
+    public void clickOnMathCategory() {
+        secondScreen.clickOnMathCategoryButton();
+    }
+
+    @When("click on teacher {string}")
+    public void clickOnTeacher(String TeacherName) {
+        secondScreen.clickOnTeacherNameButton();
+    }
+
+    @Then("teacher salary per hour should be {string}")
+    public void teacherSalaryPerHourShouldBe(String salary) {
+        Assert.assertEquals(secondScreen.getTeacherSalary().getText(),salary);
+    }
 }
